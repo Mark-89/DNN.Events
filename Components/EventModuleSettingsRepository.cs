@@ -1,4 +1,4 @@
-#region Copyright
+﻿#region Copyright
 
 // 
 // DotNetNuke® - http://www.dotnetnuke.com
@@ -22,22 +22,14 @@
 
 #endregion
 
-
-namespace DotNetNuke.Modules.Events.Components.Integration
+namespace DotNetNuke.Modules.Events
 {
-    public class Constants
-    {
-        #region Misc.
+    using DotNetNuke.Entities.Modules.Settings;
+    using global::Components;
 
-        /// <summary>
-        ///     The name of the content type stored in the ContentTypes table of the core.
-        /// </summary>
-        public const string ContentEventRecurMasterTypeName = "DNN_Events_EventRecurMaster";
-
-        public const string ContentEventTypeName = "DNN_Events_Event";
-        public const string JournalEventCreateTypeName = "eventcreate";
-        public const string JournalEventAttendTypeName = "eventattend";
-
-        #endregion
-    }
+    /// <summary>
+    ///     The <see cref="SettingsRepository{T}" /> used for storing and retrieving <see cref="EventModuleSettings" />
+    /// </summary>
+    public class EventModuleSettingsRepository : SettingsRepository<EventModuleSettings>
+    { }
 }

@@ -129,22 +129,13 @@
     <Reference Include="System.Data">
       <Name>System.Data</Name>
     </Reference>
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing">
       <Name>System.Drawing</Name>
     </Reference>
-    <Reference Include="System.Management" />
     <Reference Include="System.Web">
       <Name>System.Web</Name>
     </Reference>
-    <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Extensions.Design" />
-    <Reference Include="System.Windows.Forms">
-      <Name>System.Windows.Forms</Name>
-    </Reference>
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
@@ -159,10 +150,11 @@
   <!-- <Folder Include="Properties\" /> -->
   <!-- </ItemGroup> -->
   <ItemGroup>
+    <Compile Include="Components\EventModuleSettings.cs" />
+    <Compile Include="Components\EventModuleSettingsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <!-- <SubType>Code</SubType> -->
     </Compile>
-    <Compile Include="Components\EventModuleSettingsInfo.cs" />
     <Compile Include="Components\EventTokenReplace.cs" />
     <Compile Include="Components\iCalProvider.cs" />
     <Compile Include="Components\Integration\Constants.cs" />
@@ -175,7 +167,7 @@
     </Compile>
     <Compile Include="Components\EventInfo.cs" />
     <Compile Include="Components\EventNotification.cs" />
-    <Compile Include="Components\EventModuleSettings.cs" />
+    <Compile Include="Components\EventModuleTemplates.cs" />
     <Compile Include="Components\SqlDataProvider.cs" />
     <Compile Include="SubControls\SelectLocation.ascx.designer.cs">
       <DependentUpon>SelectLocation.ascx</DependentUpon>
@@ -587,7 +579,7 @@
   <ItemGroup>
     <ProjectReference Include="Controls\DotNetNuke.Events.ScheduleControl\DotNetNuke.Events.ScheduleControl.csproj">
       <Project>{e90da1b8-e75d-4e59-ae77-407be089cf1a}</Project>
-      <Name>DotNetNuke.Events.ScheduleControl</Name>
+      <Name>DotNetNuke.Events.ScheduleControl</Name>      
     </ProjectReference>
   </ItemGroup>
   <!-- <ItemGroup> -->
