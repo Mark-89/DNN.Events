@@ -388,7 +388,8 @@
     <Content Include="Installation\ReleaseNotes\Release.06.03.02.txt" />
     <Content Include="Installation\ReleaseNotes\Release.07.00.02.txt" />
     <Content Include="Installation\ReleaseNotes\Release.07.00.01.txt" />
-    <Content Include="Styles\jquery-ui.min.css" />
+    <Content Include="Scripts\Resources\jquery-ui.css" />
+    <Content Include="Scripts\Resources\jquery-ui.min.js" />
     <Content Include="SubControls\SelectLocation.ascx" />
     <Content Include="SubControls\EventIcons.ascx" />
     <Content Include="EventIPN.aspx" />
@@ -584,6 +585,7 @@
       <Name>DotNetNuke.Events.ScheduleControl</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <!-- <ItemGroup> -->
   <!-- <Reference Include="Microsoft.VisualBasic" /> -->
   <!-- <Reference Include="mscorlib" /> -->

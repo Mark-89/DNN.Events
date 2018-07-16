@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DotNetNuke.Modules.Events {
-    
-    
-    public partial class EventMonth {
-        
+namespace DotNetNuke.Modules.Events
+{
+
+
+    public partial class EventMonth
+    {
+
         /// <summary>
         /// toolTipManager control.
         /// </summary>
@@ -20,7 +22,16 @@ namespace DotNetNuke.Modules.Events {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.Web.UI.WebControls.DnnToolTipManager toolTipManager;
-        
+
+        /// <summary>
+        /// txtdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtdate;
+
         /// <summary>
         /// pnlDateControls control.
         /// </summary>
@@ -29,7 +40,7 @@ namespace DotNetNuke.Modules.Events {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlDateControls;
-        
+
         /// <summary>
         /// lnkToday control.
         /// </summary>
@@ -38,7 +49,7 @@ namespace DotNetNuke.Modules.Events {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkToday;
-        
+
         /// <summary>
         /// dpGoToDate control.
         /// </summary>
@@ -47,7 +58,7 @@ namespace DotNetNuke.Modules.Events {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.Web.UI.WebControls.DnnDatePicker dpGoToDate;
-        
+
         /// <summary>
         /// SelectCategory control.
         /// </summary>
@@ -56,7 +67,7 @@ namespace DotNetNuke.Modules.Events {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.Modules.Events.SelectCategory SelectCategory;
-        
+
         /// <summary>
         /// SelectLocation control.
         /// </summary>
@@ -65,7 +76,7 @@ namespace DotNetNuke.Modules.Events {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.Modules.Events.SelectLocation SelectLocation;
-        
+
         /// <summary>
         /// EventIcons control.
         /// </summary>
@@ -74,7 +85,7 @@ namespace DotNetNuke.Modules.Events {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.Modules.Events.EventIcons EventIcons;
-        
+
         /// <summary>
         /// EventCalendar control.
         /// </summary>
@@ -83,7 +94,7 @@ namespace DotNetNuke.Modules.Events {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.Modules.Events.ScheduleControl.MonthControl.DNNCalendar EventCalendar;
-        
+
         /// <summary>
         /// EventIcons2 control.
         /// </summary>
@@ -92,5 +103,23 @@ namespace DotNetNuke.Modules.Events {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DotNetNuke.Modules.Events.EventIcons EventIcons2;
+
+        /// <summary>
+        /// hdnDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnDate;
+
+        /// <summary>
+        /// hdnFirstDay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnFirstDay;
     }
 }

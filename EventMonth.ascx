@@ -5,7 +5,9 @@
 <%@ Register TagPrefix="evt" TagName="Icons" Src="~/DesktopModules/Events/SubControls/EventIcons.ascx" %>
 <%@ Register TagPrefix="dnn" Assembly="DotNetNuke.Web.Deprecated" Namespace="DotNetNuke.Web.UI.WebControls" %>
 
-<%--<link rel="stylesheet" type="text/css" href="<%=Page.ResolveUrl("~/DesktopModules/Events/Styles/jquery-ui.min.css") %>"/>--%>
+<%--<link rel="stylesheet" type="text/css" href="<%=Page.ResolveUrl("~/DesktopModules/Events/Scripts/Resources/jquery-ui.css") %>"/>--%>
+<link type="text/css" href="<%=Page.ResolveUrl("~/DesktopModules/Events/Scripts/Resources/jquery-ui.css") %>" rel="Stylesheet" />
+<script type="text/javascript" src="<%=Page.ResolveUrl("~/DesktopModules/Events/Scripts/Resources/jquery-ui.min.js") %>"></script>
 
 <dnn:DnnToolTipManager
     ID="toolTipManager" runat="server" HideEvent="LeaveTargetAndToolTip" Modal="False" EnableShadow="True" CssClass="Eventtooltip" ShowCallout="False"/>
@@ -13,7 +15,8 @@
     <div class="EvtHdrLftCol"></div>
     <div class="EvtHdrMdlCol">
         <div>
-            <%--<p>Date: <input type="text" id="datepicker"></p>--%>
+           <%-- <p>Date: <input type="text" id="datepicker"></p>--%>
+            <asp:TextBox ID="txtdate" runat="server" ></asp:TextBox>
             <asp:panel id="pnlDateControls" Runat="server" Visible="True" CssClass="EvtDateControls">
                 <asp:LinkButton ID="lnkToday" runat="server" CssClass="CommandButton" OnClick="lnkToday_Click"> Today</asp:LinkButton>&nbsp;
                 <dnn:DnnDatePicker id="dpGoToDate" AutoPostBack="true" runat="server" DateInput-CssClass="DateFormat" CssClass="DatePicker"></dnn:DnnDatePicker>
@@ -45,8 +48,30 @@
         <evt:Icons ID="EventIcons2" runat="server"></evt:Icons>
     </div>
 </div>
-<%--<script>
-    $( function() {
-        $( "#datepicker" ).datepicker();
+
+<asp:HiddenField id="hdnDate" runat="server" />
+<asp:HiddenField id="hdnFirstDay" runat="server" />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var dtString = $("#<%=hdnDate.ClientID%>").val();
+        dtString = dtString.split(',');
+        var defaultDate = new Date(dtString[0], dtString[1], dtString[2]);
+
+        var firstDayValue = $("#<%=hdnFirstDay.ClientID%>").val();
+        
+        $("[id$=txtdate]").datepicker(
+            {
+                firstDay: firstDayValue,
+                showOn: "button",
+                buttonImage: "/DesktopModules/Events/Installation/DNN_Events.png",
+                buttonImageOnly: true,
+                required: true,
+                message: "This is a required field"
+            }
+            );
+       
+        $("[id$=txtdate]").datepicker('setDate', defaultDate);
+        
     } );
-</script>--%>
+</script>

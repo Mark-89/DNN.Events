@@ -79,6 +79,9 @@ namespace DotNetNuke.Modules.Events
                 this.SetupViewControls(this.EventIcons, this.EventIcons2, this.SelectCategory, this.SelectLocation,
                                        this.pnlDateControls);
 
+                this.hdnDate.Value = this.SelectedDate.Year.ToString() + "," + this.SelectedDate.Month.ToString() + "," + this.SelectedDate.Day.ToString();
+                this.hdnFirstDay.Value = ((int)this.Settings.WeekStart).ToString();
+
                 this.dpGoToDate.SelectedDate = this.SelectedDate.Date;
                 this.dpGoToDate.Calendar.FirstDayOfWeek = this.Settings.WeekStart;
 
