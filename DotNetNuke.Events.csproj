@@ -136,6 +136,7 @@
       <Name>System.Web</Name>
     </Reference>
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
@@ -150,6 +151,13 @@
   <!-- <Folder Include="Properties\" /> -->
   <!-- </ItemGroup> -->
   <ItemGroup>
+    <Compile Include="AjaxBridge.aspx.cs">
+      <DependentUpon>AjaxBridge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AjaxBridge.aspx.designer.cs">
+      <DependentUpon>AjaxBridge.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Components\EventModuleSettings.cs" />
     <Compile Include="Components\EventModuleSettingsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -334,6 +342,7 @@
       <DependentUpon>Settings.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Content Include="AjaxBridge.aspx" />
     <Content Include="EventEnrollees.xslt" />
     <Content Include="EventSettings.ascx" />
     <Content Include="EditEvents.ascx">

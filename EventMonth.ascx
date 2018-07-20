@@ -53,15 +53,36 @@
 <asp:HiddenField id="hdnFirstDay" runat="server" />
 
 <script type="text/javascript">
-    $(document).ready(function () {
-        var dtString = $("#<%=hdnDate.ClientID%>").val();
-        dtString = dtString.split(',');
-        var defaultDate = new Date(dtString[0], dtString[1], dtString[2]);
-
+    $(document).ready(function() {
+        //var dtString = $("#<%=hdnDate.ClientID%>").val();
+        //dtString = dtString.split(',');
+        //var defaultDate = new Date(dtString[0], dtString[1], dtString[2]);
+        var defaultDate = new Date($("#<%=hdnDate.ClientID%>").val());
         var firstDayValue = $("#<%=hdnFirstDay.ClientID%>").val();
-        
+
         $("[id$=txtdate]").datepicker(
             {
+                onSelect: function (value, date) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/DesktopModules/Events/AjaxBridge.aspx/Control_GetTest",
+                        data: value,
+                        cache: false,
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        beforeSend: function (data) {
+                            alert("before");
+                        },
+                        success: function (data) {
+                            alert("Page Load Time from Session " + data.d);
+                        },
+                        fail: function () {
+                            alert("fail");
+                        }
+                    });
+
+                    $("#<%=hdnDate.ClientID%>").val(new Date(value).toISOString());
+                },
                 firstDay: firstDayValue,
                 showOn: "button",
                 buttonImage: "/DesktopModules/Events/Installation/DNN_Events.png",
@@ -69,9 +90,9 @@
                 required: true,
                 message: "This is a required field"
             }
-            );
-       
+        );
+
         $("[id$=txtdate]").datepicker('setDate', defaultDate);
-        
-    } );
+
+    });
 </script>

@@ -79,7 +79,8 @@ namespace DotNetNuke.Modules.Events
                 this.SetupViewControls(this.EventIcons, this.EventIcons2, this.SelectCategory, this.SelectLocation,
                                        this.pnlDateControls);
 
-                this.hdnDate.Value = this.SelectedDate.Year.ToString() + "," + this.SelectedDate.Month.ToString() + "," + this.SelectedDate.Day.ToString();
+                //this.hdnDate.Value = this.SelectedDate.Year.ToString() + "," + (this.SelectedDate.Month-1).ToString() + "," + this.SelectedDate.Day.ToString();
+                this.hdnDate.Value = this.SelectedDate.ToString(CultureInfo.InvariantCulture);
                 this.hdnFirstDay.Value = ((int)this.Settings.WeekStart).ToString();
 
                 this.dpGoToDate.SelectedDate = this.SelectedDate.Date;
@@ -102,7 +103,8 @@ namespace DotNetNuke.Modules.Events
                 // if 1st time on page...
                 if (!this.Page.IsPostBack)
                 {
-                    this.EventCalendar.VisibleDate = Convert.ToDateTime(this.dpGoToDate.SelectedDate);
+                    //this.EventCalendar.VisibleDate = Convert.ToDateTime(this.dpGoToDate.SelectedDate);
+                    this.EventCalendar.VisibleDate = Convert.ToDateTime(this.hdnDate.Value);
                     if (!this.Settings.Monthcellnoevents)
                     {
                         this.EventCalendar.SelectedDate = this.EventCalendar.VisibleDate;
@@ -152,7 +154,9 @@ namespace DotNetNuke.Modules.Events
             this._pageBound = true;
             //****DO NOT CHANGE THE NEXT SECTION FOR ML CODING ****
             // Used Only to select view dates on Event Month View...
-            var useDate = Convert.ToDateTime(this.dpGoToDate.SelectedDate);
+
+            var useDate = Convert.ToDateTime(this.hdnDate.Value);
+            //var useDate = Convert.ToDateTime(this.dpGoToDate.SelectedDate);
             var initDate = new DateTime(useDate.Year, useDate.Month, 1);
             startDate = initDate.AddDays(-10); // Allow for Prev Month days in View
             // Load 2 months of events.  This used to load only the events for the current month,
@@ -573,6 +577,11 @@ namespace DotNetNuke.Modules.Events
             }
             //fill grid with current selection's data
             this.BindDataGrid();
+        }
+
+        public static int blaChanged()
+        {
+            return 2;
         }
 
         #endregion
